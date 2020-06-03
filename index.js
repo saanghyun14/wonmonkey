@@ -5,12 +5,12 @@ const moment = require("moment");
 require("moment-duration-format");
 const welcomeChannelName = "join";
 const byeChannelName = "join";
-const welcomeChannelComment = "어서온나 개새끼야.";
-const byeChannelComment = "오빠는 항상 그런식이야 필요 없어!";
+const welcomeChannelComment = "어서온나 개세이야.";
+const byeChannelComment = "오빤 항상 그런식이야 저리 꺼져.";
 
 client.on('ready', () => {
   console.log('켰다.');
-  client.user.setPresence({ game: { name: '뭘봐 씹새야.' }, status: 'online' })
+  client.user.setPresence({ game: { name: '!help를 쳐보세요.' }, status: 'online' })
 });
 
 client.on("guildMemberAdd", (member) => {
@@ -20,7 +20,7 @@ client.on("guildMemberAdd", (member) => {
 
   welcomeChannel.send(`<@${newUser.id}> ${welcomeChannelComment}\n`);
 
-  member.addRole(guild.roles.find(role => role.name == "온라인"));
+  member.addRole(guild.roles.find(role => role.name == "게스트"));
 });
 
 client.on("guildMemberRemove", (member) => {
@@ -32,24 +32,22 @@ client.on("guildMemberRemove", (member) => {
 });
 
 client.on('message', (message) => {
-  if(message.author.bot) return;
-
-  if(message.content == '원욱아') {
-    return message.reply('일베는 나빠!');
+  if(message.content === '원욱아') {
+    message.reply('일베는 나빠!');
   }
+});
 
-  client.on('message', (message) => {
-    if(message.author.bot) return;
-  
-    if(message.content == '지건!') {
-      return message.reply('텟카이!!');
-    }
+client.on('message', (message) => {
+  if(message.content === '원욱이 취향은?') {
+    message.reply('그건 메이든데요~~');
+  }
+});
 
 client.on('message', (message) => {
   if(message.author.bot) return;
 
-  if(message.content == '원욱이 취향은?') {
-    return message.reply('그건 메이든데요~~');
+  if(message.content == '지건!') {
+    return message.reply('텟카이!!');
   }
 
   if(message.content == '!si') {

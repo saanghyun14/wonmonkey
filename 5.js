@@ -29,10 +29,22 @@ client.on("guildMemberRemove", (member) => {
 });
 
 client.on('message', (message) => {
+  if(message.content === '원욱아') {
+    message.reply('일베는 나빠!');
+  }
+});
+
+client.on('message', (message) => {
+  if(message.content === '원욱이 취향은?') {
+    message.reply('그건 메이든데요~~');
+  }
+});
+
+client.on('message', (message) => {
   if(message.author.bot) return;
 
-  if(message.content == 'ping') {
-    return message.reply('pong');
+  if(message.content == '지건!') {
+    return message.reply('텟카이!!');
   }
 
   if(message.content == 'embed') {
