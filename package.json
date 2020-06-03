@@ -1,12 +1,21 @@
 {
   "name": "bot",
   "version": "1.0.0",
-  "description": "",
   "main": "index.js",
   "scripts": {
     "r": "node index.js"
   },
   "dependencies": {
     "discord.js": "^11.5.1"
-  }
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/saanghyun14/wonmonkey.git"
+  },
+  "bugs": {
+    "url": "https://github.com/saanghyun14/wonmonkey/issues"
+  },
+  "homepage": "https://github.com/saanghyun14/wonmonkey#readme",
+  "description": ""
 }
